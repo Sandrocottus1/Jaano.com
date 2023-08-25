@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo"><a href="#">Jaano.com</a></h2>
+        <nav class="navigation">
+            <a href="#">HOME</a>
+            <a href="#">SERVICES</a>
+            <a href="#">CONTACT</a>
+        </nav> 
+    </header>
+    <div class="pics">
+        <img src="img.jpg" alt="Decorative Image">
+    </div>
+        <div class="wrapper">
+        <div class="static-txt">What is your</div>
+        
+        <ul class="dynamic-txts"><br><br>
+            <li><span>area of interest ?</span></li>
+        </ul>
+    </div>
+    <form id="hero">
+    <div class="hero" id="hero">
+      <div class="container">
+       <div class="row"><p>Be a shopkeeper and expand your business</p>
+        <label><input type="checkbox"  id="checkbox1">
+        <span></span>
+      </label> 
+       </div> 
+       <div class="row"><p>Be a user and explore nearby shops near you</p>
+        <label><input type="checkbox" id="checkbox2">
+        <span></span>
+      </label> 
+       </div> 
+       <div class="cont">
+       <button type="submit" class="btn btn1">Submit</button>
+       </div>
+      </div>
+    </div>
+    </form>
+    <script>
+const checkbox1 = document.getElementById('checkbox1');
+const checkbox2 = document.getElementById('checkbox2');
+checkbox1.addEventListener('click', function() {
+  if (checkbox1.checked) {
+    checkbox2.checked = false;
+  }
+});
+
+checkbox2.addEventListener('click', function() {
+  if (checkbox2.checked) {
+    checkbox1.checked = false;
+  }
+});
+</script>
+<script>
+document.getElementById('hero').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+
+  const checkbox1 = document.getElementById('checkbox1');
+  const checkbox2 = document.getElementById('checkbox2');
+
+  if (checkbox1.checked) {
+    window.location.href = 'upload.php'; 
+  } else if (checkbox2.checked) {
+    window.location.href = '#'; 
+  } else {
+    console.log("fuck off");
+  }
+});
+
+</script>
+
+</body>
+</html>
+
+
+
